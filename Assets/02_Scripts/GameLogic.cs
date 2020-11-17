@@ -22,6 +22,17 @@ public class GameLogic : MonoBehaviour
     //Time Count UI
     public Text textTimeCount;
 
+    //Power UI
+    float powerCount;
+    float powerMaxCount;
+    public Image imagePowerBar;
+    public Text textPowerCount;
+
+    //Skill
+    bool checkSkill;          //  true=On,  false=Off
+    public Button btnSkill;
+
+    //List
     public List<GameObject> TamaList = new List<GameObject>();
     public List<Transform> TamaRespawnList = new List<Transform>();
     public List<GameObject> TamaSpawnedList = new List<GameObject>();
@@ -43,7 +54,9 @@ public class GameLogic : MonoBehaviour
 
     void Update()
     {
-        
+        PowerCountCheck();
+        SkillCheck();
+        DieCheck();
     }
 
     //ResetAll                         (void Start)
@@ -51,6 +64,14 @@ public class GameLogic : MonoBehaviour
     {
         carryNum = 5;
         checkCarry = false;
+
+        //Power
+        powerCount = 0;
+        powerMaxCount = 10;
+
+        //Skill
+        checkSkill = false;
+        btnSkill.interactable = false;
 
         TamaRespawn();
     }
@@ -162,6 +183,8 @@ public class GameLogic : MonoBehaviour
                     TamaNumList[z] = 5;
                     TamaNumList[z - 7] = 5;
                     TamaNumList[z + 7] = 5;
+
+                    powerCount = powerCount + 1.0f;
                 }
             }
             else
@@ -318,5 +341,99 @@ public class GameLogic : MonoBehaviour
         {
 
         }
+    }
+
+    //PowerCountCheck                 (void Update)
+    void PowerCountCheck()
+    {
+        if(powerCount >= powerMaxCount)
+        {
+            if(checkSkill == true)
+            {
+                powerCount = powerMaxCount;
+            }
+            else if(checkSkill == false)
+            {
+                checkSkill = true;
+
+                powerCount = 0;
+            }
+        }
+
+        textPowerCount.text = powerCount.ToString() + " / " + powerMaxCount.ToString();
+
+        imagePowerBar.fillAmount = powerCount / powerMaxCount;
+    }
+
+    //Skill Check                    (void Update)
+    void SkillCheck()
+    {
+        if(checkSkill == true)
+        {
+            btnSkill.interactable = true;
+        }
+        else if(checkSkill == false)
+        {
+            btnSkill.interactable = false;
+        }
+    }
+
+    //Skill BTN
+    public void BtnSkillOn()
+    {
+        checkSkill = false;
+
+        Skill();
+    }
+
+    //Skill Active
+    void Skill()
+    {
+        Debug.Log("SKILL");
+
+        int i = 0;
+        while(i < 84)
+        {
+            if(TamaNumList[i] == 5)
+            {
+                i++;
+            }
+            else if(TamaNumList[i] != 5)
+            {
+                Debug.Log("i : " + i);
+                break;
+            }
+        }
+
+        while(i < 84)
+        {
+            if(i < 84)
+            {
+                Destroy(TamaSpawnedList[i]);
+                TamaNumList[i] = 5;
+
+                i = i + 7;
+            }
+            if(i > 83)
+            {
+                break;
+            }
+        }
+    }
+
+    //Die Check                       (void Update)
+    void DieCheck()
+    {
+        if(TamaNumList[0] != 5 || TamaNumList[1] != 5 || TamaNumList[2] != 5 || TamaNumList[3] != 5 || TamaNumList[4] != 5 || TamaNumList[5] != 5 || TamaNumList[6] != 5)
+        {
+            Die();
+        }
+    }
+
+    //Die
+    void Die()
+    {
+        Debug.Log("Die");
+        Time.timeScale = 0;
     }
 }
