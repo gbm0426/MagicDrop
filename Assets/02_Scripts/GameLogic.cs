@@ -19,6 +19,15 @@ public class GameLogic : MonoBehaviour
     //Drop Number -> Drop Position    7=null(reset)
     int receiveDropNum;
 
+    //Drop
+    public GameObject objDrop_0;
+    public GameObject objDrop_1;
+    public GameObject objDrop_2;
+    public GameObject objDrop_3;
+    public GameObject objDrop_4;
+    public GameObject objDrop_5;
+    public GameObject objDrop_6;
+
     //Time Count UI
     public Text textTimeCount;
 
@@ -42,7 +51,7 @@ public class GameLogic : MonoBehaviour
     public List<GameObject> TamaSpawnedList = new List<GameObject>();
     public List<int> TamaNumList = new List<int>();
     public List<GameObject> TamaCarryList = new List<GameObject>();
-
+    //List
 
 
 
@@ -74,6 +83,9 @@ public class GameLogic : MonoBehaviour
 
         carryNum = 5;
         checkCarry = false;
+
+        //Drop
+        DropArrowAllFalse();
 
         //Power
         powerCount = 0;
@@ -183,7 +195,7 @@ public class GameLogic : MonoBehaviour
             }
         }
 
-        //Color Check
+        //Color Check (3Tama)
         for(int z = 76; z > 6; z--)
         {
             if (TamaNumList[z] != 5)
@@ -205,7 +217,7 @@ public class GameLogic : MonoBehaviour
 
             }
         }
-        yield return new WaitForSeconds(0.2f);
+        yield return new WaitForSeconds(0.4f);
 
         StartCoroutine(TamaAutoDown());
     }
@@ -219,19 +231,29 @@ public class GameLogic : MonoBehaviour
         }
         else if(checkCarry == false)
         {
-            carryNum = TamaNumList[77];
-            Destroy(TamaSpawnedList[77]);
-            TamaNumList[77] = 5;
+            if(TamaNumList[77] != 5)
+            {
+                //Arrow Reset
+                DropArrowAllFalse();
 
-            //Move Player
-            objPlayer.transform.position = new Vector3(-2.5f, -4.5f, 0);
+                carryNum = TamaNumList[77];
+                Destroy(TamaSpawnedList[77]);
+                TamaNumList[77] = 5;
 
-            //Carry Tama -> Children add
-            GameObject carryTama = Instantiate(TamaList[carryNum], carryTamaPos.position, Quaternion.identity);
-            carryTama.transform.parent = parentTamaPos.transform;
-            TamaCarryList[0] = carryTama;
+                //Move Player
+                objPlayer.transform.position = new Vector3(-2.5f, -4.5f, 0);
 
-            checkCarry = true;
+                //Carry Tama -> Children add
+                GameObject carryTama = Instantiate(TamaList[carryNum], carryTamaPos.position, Quaternion.identity);
+                carryTama.transform.parent = parentTamaPos.transform;
+                TamaCarryList[0] = carryTama;
+
+                checkCarry = true;
+            }
+            else if(TamaNumList[77] == 5)
+            {
+
+            }
         }
     }
 
@@ -243,19 +265,29 @@ public class GameLogic : MonoBehaviour
         }
         else if (checkCarry == false)
         {
-            carryNum = TamaNumList[78];
-            Destroy(TamaSpawnedList[78]);
-            TamaNumList[78] = 5;
+            if(TamaNumList[78] != 5)
+            {
+                //Arrow Reset
+                DropArrowAllFalse();
 
-            //Move Player
-            objPlayer.transform.position = new Vector3(-1.87f, -4.5f, 0);
+                carryNum = TamaNumList[78];
+                Destroy(TamaSpawnedList[78]);
+                TamaNumList[78] = 5;
 
-            //Carry Tama -> Children add
-            GameObject carryTama = Instantiate(TamaList[carryNum], carryTamaPos.position, Quaternion.identity);
-            carryTama.transform.parent = parentTamaPos.transform;
-            TamaCarryList[0] = carryTama;
+                //Move Player
+                objPlayer.transform.position = new Vector3(-1.87f, -4.5f, 0);
 
-            checkCarry = true;
+                //Carry Tama -> Children add
+                GameObject carryTama = Instantiate(TamaList[carryNum], carryTamaPos.position, Quaternion.identity);
+                carryTama.transform.parent = parentTamaPos.transform;
+                TamaCarryList[0] = carryTama;
+
+                checkCarry = true;
+            }
+            else if(TamaNumList[78] == 5)
+            {
+
+            }
         }
     }
 
@@ -267,19 +299,29 @@ public class GameLogic : MonoBehaviour
         }
         else if (checkCarry == false)
         {
-            carryNum = TamaNumList[79];
-            Destroy(TamaSpawnedList[79]);
-            TamaNumList[79] = 5;
+            if(TamaNumList[79] != 5)
+            {
+                //Arrow Reset
+                DropArrowAllFalse();
 
-            //Move Player
-            objPlayer.transform.position = new Vector3(-1.25f, -4.5f, 0);
+                carryNum = TamaNumList[79];
+                Destroy(TamaSpawnedList[79]);
+                TamaNumList[79] = 5;
 
-            //Carry Tama -> Children add
-            GameObject carryTama = Instantiate(TamaList[carryNum], carryTamaPos.position, Quaternion.identity);
-            carryTama.transform.parent = parentTamaPos.transform;
-            TamaCarryList[0] = carryTama;
+                //Move Player
+                objPlayer.transform.position = new Vector3(-1.25f, -4.5f, 0);
 
-            checkCarry = true;
+                //Carry Tama -> Children add
+                GameObject carryTama = Instantiate(TamaList[carryNum], carryTamaPos.position, Quaternion.identity);
+                carryTama.transform.parent = parentTamaPos.transform;
+                TamaCarryList[0] = carryTama;
+
+                checkCarry = true;
+            }
+            else if(TamaNumList[79] == 5)
+            {
+
+            }
         }
     }
 
@@ -291,19 +333,29 @@ public class GameLogic : MonoBehaviour
         }
         else if (checkCarry == false)
         {
-            carryNum = TamaNumList[80];
-            Destroy(TamaSpawnedList[80]);
-            TamaNumList[80] = 5;
+            if(TamaNumList[80] != 5)
+            {
+                //Arrow Reset
+                DropArrowAllFalse();
 
-            //Move Player
-            objPlayer.transform.position = new Vector3(-0.6f, -4.5f, 0);
+                carryNum = TamaNumList[80];
+                Destroy(TamaSpawnedList[80]);
+                TamaNumList[80] = 5;
 
-            //Carry Tama -> Children add
-            GameObject carryTama = Instantiate(TamaList[carryNum], carryTamaPos.position, Quaternion.identity);
-            carryTama.transform.parent = parentTamaPos.transform;
-            TamaCarryList[0] = carryTama;
+                //Move Player
+                objPlayer.transform.position = new Vector3(-0.6f, -4.5f, 0);
 
-            checkCarry = true;
+                //Carry Tama -> Children add
+                GameObject carryTama = Instantiate(TamaList[carryNum], carryTamaPos.position, Quaternion.identity);
+                carryTama.transform.parent = parentTamaPos.transform;
+                TamaCarryList[0] = carryTama;
+
+                checkCarry = true;
+            }
+            else if(TamaNumList[80] == 5)
+            {
+
+            }
         }
     }
 
@@ -315,19 +367,29 @@ public class GameLogic : MonoBehaviour
         }
         else if (checkCarry == false)
         {
-            carryNum = TamaNumList[81];
-            Destroy(TamaSpawnedList[81]);
-            TamaNumList[81] = 5;
+            if(TamaNumList[81] != 5)
+            {
+                //Arrow Reset
+                DropArrowAllFalse();
 
-            //Move Player
-            objPlayer.transform.position = new Vector3(0f, -4.5f, 0);
+                carryNum = TamaNumList[81];
+                Destroy(TamaSpawnedList[81]);
+                TamaNumList[81] = 5;
 
-            //Carry Tama -> Children add
-            GameObject carryTama = Instantiate(TamaList[carryNum], carryTamaPos.position, Quaternion.identity);
-            carryTama.transform.parent = parentTamaPos.transform;
-            TamaCarryList[0] = carryTama;
+                //Move Player
+                objPlayer.transform.position = new Vector3(0f, -4.5f, 0);
 
-            checkCarry = true;
+                //Carry Tama -> Children add
+                GameObject carryTama = Instantiate(TamaList[carryNum], carryTamaPos.position, Quaternion.identity);
+                carryTama.transform.parent = parentTamaPos.transform;
+                TamaCarryList[0] = carryTama;
+
+                checkCarry = true;
+            }
+            else if(TamaNumList[81] == 5)
+            {
+
+            }
         }
     }
 
@@ -339,19 +401,29 @@ public class GameLogic : MonoBehaviour
         }
         else if (checkCarry == false)
         {
-            carryNum = TamaNumList[82];
-            Destroy(TamaSpawnedList[82]);
-            TamaNumList[82] = 5;
+            if(TamaNumList[82] != 5)
+            {
+                //Arrow Reset
+                DropArrowAllFalse();
 
-            //Move Player
-            objPlayer.transform.position = new Vector3(0.6f, -4.5f, 0);
+                carryNum = TamaNumList[82];
+                Destroy(TamaSpawnedList[82]);
+                TamaNumList[82] = 5;
 
-            //Carry Tama -> Children add
-            GameObject carryTama = Instantiate(TamaList[carryNum], carryTamaPos.position, Quaternion.identity);
-            carryTama.transform.parent = parentTamaPos.transform;
-            TamaCarryList[0] = carryTama;
+                //Move Player
+                objPlayer.transform.position = new Vector3(0.6f, -4.5f, 0);
 
-            checkCarry = true;
+                //Carry Tama -> Children add
+                GameObject carryTama = Instantiate(TamaList[carryNum], carryTamaPos.position, Quaternion.identity);
+                carryTama.transform.parent = parentTamaPos.transform;
+                TamaCarryList[0] = carryTama;
+
+                checkCarry = true;
+            }
+            else if(TamaNumList[82] == 5)
+            {
+
+            }
         }
     }
 
@@ -363,31 +435,291 @@ public class GameLogic : MonoBehaviour
         }
         else if (checkCarry == false)
         {
-            carryNum = TamaNumList[83];
-            Destroy(TamaSpawnedList[83]);
-            TamaNumList[83] = 5;
+            if(TamaNumList[83] != 5)
+            {
+                //Arrow Reset
+                DropArrowAllFalse();
 
-            //Move Player
-            objPlayer.transform.position = new Vector3(1.25f, -4.5f, 0);
+                carryNum = TamaNumList[83];
+                Destroy(TamaSpawnedList[83]);
+                TamaNumList[83] = 5;
 
-            //Carry Tama -> Children add
-            GameObject carryTama = Instantiate(TamaList[carryNum], carryTamaPos.position, Quaternion.identity);
-            carryTama.transform.parent = parentTamaPos.transform;
-            TamaCarryList[0] = carryTama;
+                //Move Player
+                objPlayer.transform.position = new Vector3(1.25f, -4.5f, 0);
 
-            checkCarry = true;
+                //Carry Tama -> Children add
+                GameObject carryTama = Instantiate(TamaList[carryNum], carryTamaPos.position, Quaternion.identity);
+                carryTama.transform.parent = parentTamaPos.transform;
+                TamaCarryList[0] = carryTama;
+
+                checkCarry = true;
+            }
+            else if(TamaNumList[83] == 5)
+            {
+
+            }
         }
     }
 
+    //Drop Arrow All False
+    void DropArrowAllFalse()
+    {
+        objDrop_0.gameObject.SetActive(false);
+        objDrop_1.gameObject.SetActive(false);
+        objDrop_2.gameObject.SetActive(false);
+        objDrop_3.gameObject.SetActive(false);
+        objDrop_4.gameObject.SetActive(false);
+        objDrop_5.gameObject.SetActive(false);
+        objDrop_6.gameObject.SetActive(false);
+    }
+
+    ////TamaDropButton
+    //public void BtnTamaDrop_0()
+    //{
+    //    if (checkCarry == true)
+    //    {
+    //        int i = 0;
+
+    //        Destroy(TamaCarryList[0]);
+
+    //        //Move Player
+    //        objPlayer.transform.position = new Vector3(-2.5f, -4.5f, 0);
+
+    //        //Drop Arrow
+    //        objDrop_0.gameObject.SetActive(true);
+
+    //        Transform targetPoint = TamaRespawnList[i];
+    //        GameObject newTama = Instantiate(TamaList[carryNum]);
+    //        newTama.transform.position = targetPoint.position;
+    //        TamaSpawnedList[i] = newTama;
+    //        TamaNumList[i] = carryNum;
+
+    //        //reset
+    //        carryNum = 5;
+    //        checkCarry = false;
+    //    }
+    //    else if (checkCarry == false)
+    //    {
+
+    //    }
+    //}
+
+    //public void BtnTamaDrop_1()
+    //{
+    //    if (checkCarry == true)
+    //    {
+    //        int i = 1;
+
+    //        Destroy(TamaCarryList[0]);
+
+    //        //Move Player
+    //        objPlayer.transform.position = new Vector3(-1.87f, -4.5f, 0);
+
+    //        //Drop Arrow
+    //        objDrop_0.gameObject.SetActive(true);
+
+    //        Transform targetPoint = TamaRespawnList[i];
+    //        GameObject newTama = Instantiate(TamaList[carryNum]);
+    //        newTama.transform.position = targetPoint.position;
+    //        TamaSpawnedList[i] = newTama;
+    //        TamaNumList[i] = carryNum;
+
+    //        //reset
+    //        carryNum = 5;
+    //        checkCarry = false;
+    //    }
+    //    else if (checkCarry == false)
+    //    {
+
+    //    }
+    //}
+
+    //public void BtnTamaDrop_2()
+    //{
+    //    if (checkCarry == true)
+    //    {
+    //        int i = 2;
+
+    //        Destroy(TamaCarryList[0]);
+
+    //        //Move Player
+    //        objPlayer.transform.position = new Vector3(-1.25f, -4.5f, 0);
+
+    //        //Drop Arrow
+    //        objDrop_0.gameObject.SetActive(true);
+
+    //        Transform targetPoint = TamaRespawnList[i];
+    //        GameObject newTama = Instantiate(TamaList[carryNum]);
+    //        newTama.transform.position = targetPoint.position;
+    //        TamaSpawnedList[i] = newTama;
+    //        TamaNumList[i] = carryNum;
+
+    //        //reset
+    //        carryNum = 5;
+    //        checkCarry = false;
+    //    }
+    //    else if (checkCarry == false)
+    //    {
+
+    //    }
+    //}
+
+    //public void BtnTamaDrop_3()
+    //{
+    //    if (checkCarry == true)
+    //    {
+    //        int i = 3;
+
+    //        Destroy(TamaCarryList[0]);
+
+    //        //Move Player
+    //        objPlayer.transform.position = new Vector3(-0.6f, -4.5f, 0);
+
+    //        //Drop Arrow
+    //        objDrop_0.gameObject.SetActive(true);
+
+    //        Transform targetPoint = TamaRespawnList[i];
+    //        GameObject newTama = Instantiate(TamaList[carryNum]);
+    //        newTama.transform.position = targetPoint.position;
+    //        TamaSpawnedList[i] = newTama;
+    //        TamaNumList[i] = carryNum;
+
+    //        //reset
+    //        carryNum = 5;
+    //        checkCarry = false;
+    //    }
+    //    else if (checkCarry == false)
+    //    {
+
+    //    }
+    //}
+
+    //public void BtnTamaDrop_4()
+    //{
+    //    if (checkCarry == true)
+    //    {
+    //        int i = 4;
+
+    //        Destroy(TamaCarryList[0]);
+
+    //        //Move Player
+    //        objPlayer.transform.position = new Vector3(0f, -4.5f, 0);
+
+    //        //Drop Arrow
+    //        objDrop_0.gameObject.SetActive(true);
+
+    //        Transform targetPoint = TamaRespawnList[i];
+    //        GameObject newTama = Instantiate(TamaList[carryNum]);
+    //        newTama.transform.position = targetPoint.position;
+    //        TamaSpawnedList[i] = newTama;
+    //        TamaNumList[i] = carryNum;
+
+    //        //reset
+    //        carryNum = 5;
+    //        checkCarry = false;
+    //    }
+    //    else if (checkCarry == false)
+    //    {
+
+    //    }
+    //}
+
+    //public void BtnTamaDrop_5()
+    //{
+    //    if (checkCarry == true)
+    //    {
+    //        int i = 5;
+
+    //        Destroy(TamaCarryList[0]);
+
+    //        //Move Player
+    //        objPlayer.transform.position = new Vector3(0.6f, -4.5f, 0);
+
+    //        //Drop Arrow
+    //        objDrop_0.gameObject.SetActive(true);
+
+    //        Transform targetPoint = TamaRespawnList[i];
+    //        GameObject newTama = Instantiate(TamaList[carryNum]);
+    //        newTama.transform.position = targetPoint.position;
+    //        TamaSpawnedList[i] = newTama;
+    //        TamaNumList[i] = carryNum;
+
+    //        //reset
+    //        carryNum = 5;
+    //        checkCarry = false;
+    //    }
+    //    else if (checkCarry == false)
+    //    {
+
+    //    }
+    //}
+
+    //public void BtnTamaDrop_6()
+    //{
+    //    if (checkCarry == true)
+    //    {
+    //        int i = 6;
+
+    //        Destroy(TamaCarryList[0]);
+
+    //        //Move Player
+    //        objPlayer.transform.position = new Vector3(1.25f, -4.5f, 0);
+
+    //        //Drop Arrow
+    //        objDrop_0.gameObject.SetActive(true);
+
+    //        Transform targetPoint = TamaRespawnList[i];
+    //        GameObject newTama = Instantiate(TamaList[carryNum]);
+    //        newTama.transform.position = targetPoint.position;
+    //        TamaSpawnedList[i] = newTama;
+    //        TamaNumList[i] = carryNum;
+
+    //        //reset
+    //        carryNum = 5;
+    //        checkCarry = false;
+    //    }
+    //    else if (checkCarry == false)
+    //    {
+
+    //    }
+    //}
+
     //Drag End -> Tama Drop
+
     public void TamaDrop()
     {
-        if(checkCarry == true)
+        if (checkCarry == true)
         {
             PlayerMoveController pmc = GameObject.Find("Player").GetComponent<PlayerMoveController>();
             receiveDropNum = pmc.dropNum;
 
             Destroy(TamaCarryList[0]);
+
+            //Drop Arrow
+            switch(receiveDropNum)
+            {
+                case 0:
+                    objDrop_0.gameObject.SetActive(true);
+                    break;
+                case 1:
+                    objDrop_1.gameObject.SetActive(true);
+                    break;
+                case 2:
+                    objDrop_2.gameObject.SetActive(true);
+                    break;
+                case 3:
+                    objDrop_3.gameObject.SetActive(true);
+                    break;
+                case 4:
+                    objDrop_4.gameObject.SetActive(true);
+                    break;
+                case 5:
+                    objDrop_5.gameObject.SetActive(true);
+                    break;
+                case 6:
+                    objDrop_6.gameObject.SetActive(true);
+                    break;
+            }
 
             Transform targetPoint = TamaRespawnList[receiveDropNum];
             GameObject newTama = Instantiate(TamaList[carryNum]);
@@ -397,15 +729,16 @@ public class GameLogic : MonoBehaviour
 
             //reset
             carryNum = 5;
-            checkCarry = false;   
+            checkCarry = false;
         }
-        else if(checkCarry == false)
+        else if (checkCarry == false)
         {
 
         }
     }
 
     //PowerCountCheck                 (void Update)
+
     void PowerCountCheck()
     {
         if(powerCount >= powerMaxCount)
@@ -578,4 +911,6 @@ public class GameLogic : MonoBehaviour
         Time.timeScale = 1;
         popupGameStart.gameObject.SetActive(false);
     }
+
+
 }
