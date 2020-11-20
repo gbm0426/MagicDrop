@@ -277,15 +277,402 @@ public class GameLogic : MonoBehaviour
             {
                 if(TamaNumList[i] == TamaNumList[i - 1] && TamaNumList[i] == TamaNumList[i + 1])
                 {
-                    Destroy(TamaSpawnedList[i]);
-                    Destroy(TamaSpawnedList[i - 1]);
-                    Destroy(TamaSpawnedList[i + 1]);
-                    TamaNumList[i] = 5;
-                    TamaNumList[i - 1] = 5;
-                    TamaNumList[i + 1] = 5;
+                    if(i > 0 && i < 6)
+                    {
+                        if(i - 2 > 0 && TamaNumList[i] == TamaNumList[i - 2])
+                        {
+                            Destroy(TamaSpawnedList[i]);
+                            Destroy(TamaSpawnedList[i - 1]);
+                            Destroy(TamaSpawnedList[i + 1]);
+                            Destroy(TamaSpawnedList[i - 2]);
+                            TamaNumList[i] = 5;
+                            TamaNumList[i - 1] = 5;
+                            TamaNumList[i + 1] = 5;
+                            TamaNumList[i - 2] = 5;
 
+                            powerCount = powerCount + 1.0f;
+                        }
+                        else if(i + 2 < 6 && TamaNumList[i] == TamaNumList[i + 2])
+                        {
+                            Destroy(TamaSpawnedList[i]);
+                            Destroy(TamaSpawnedList[i - 1]);
+                            Destroy(TamaSpawnedList[i + 1]);
+                            Destroy(TamaSpawnedList[i + 2]);
+                            TamaNumList[i] = 5;
+                            TamaNumList[i - 1] = 5;
+                            TamaNumList[i + 1] = 5;
+                            TamaNumList[i + 2] = 5;
 
-                    powerCount = powerCount + 1.0f;
+                            powerCount = powerCount + 1.0f;
+                        }
+                        else
+                        {
+                            //Nothing
+                        }
+                    }
+                    else if (i > 7 && i < 13)
+                    {
+                        if (i - 2 > 7 && TamaNumList[i] == TamaNumList[i - 2])
+                        {
+                            Destroy(TamaSpawnedList[i]);
+                            Destroy(TamaSpawnedList[i - 1]);
+                            Destroy(TamaSpawnedList[i + 1]);
+                            Destroy(TamaSpawnedList[i - 2]);
+                            TamaNumList[i] = 5;
+                            TamaNumList[i - 1] = 5;
+                            TamaNumList[i + 1] = 5;
+                            TamaNumList[i - 2] = 5;
+
+                            powerCount = powerCount + 1.0f;
+                        }
+                        else if (i + 2 < 13 && TamaNumList[i] == TamaNumList[i + 2])
+                        {
+                            Destroy(TamaSpawnedList[i]);
+                            Destroy(TamaSpawnedList[i - 1]);
+                            Destroy(TamaSpawnedList[i + 1]);
+                            Destroy(TamaSpawnedList[i + 2]);
+                            TamaNumList[i] = 5;
+                            TamaNumList[i - 1] = 5;
+                            TamaNumList[i + 1] = 5;
+                            TamaNumList[i + 2] = 5;
+
+                            powerCount = powerCount + 1.0f;
+                        }
+                        else
+                        {
+                            //Nothing
+                        }
+                    }
+                    else if (i > 14 && i < 20)
+                    {
+                        if (i - 2 > 14 && TamaNumList[i] == TamaNumList[i - 2])
+                        {
+                            Destroy(TamaSpawnedList[i]);
+                            Destroy(TamaSpawnedList[i - 1]);
+                            Destroy(TamaSpawnedList[i + 1]);
+                            Destroy(TamaSpawnedList[i - 2]);
+                            TamaNumList[i] = 5;
+                            TamaNumList[i - 1] = 5;
+                            TamaNumList[i + 1] = 5;
+                            TamaNumList[i - 2] = 5;
+
+                            powerCount = powerCount + 1.0f;
+                        }
+                        else if (i + 2 < 20 && TamaNumList[i] == TamaNumList[i + 2])
+                        {
+                            Destroy(TamaSpawnedList[i]);
+                            Destroy(TamaSpawnedList[i - 1]);
+                            Destroy(TamaSpawnedList[i + 1]);
+                            Destroy(TamaSpawnedList[i + 2]);
+                            TamaNumList[i] = 5;
+                            TamaNumList[i - 1] = 5;
+                            TamaNumList[i + 1] = 5;
+                            TamaNumList[i + 2] = 5;
+
+                            powerCount = powerCount + 1.0f;
+                        }
+                        else
+                        {
+                            //Nothing
+                        }
+                    }
+                    else if (i > 21 && i < 27)
+                    {
+                        if (i - 2 > 21 && TamaNumList[i] == TamaNumList[i - 2])
+                        {
+                            Destroy(TamaSpawnedList[i]);
+                            Destroy(TamaSpawnedList[i - 1]);
+                            Destroy(TamaSpawnedList[i + 1]);
+                            Destroy(TamaSpawnedList[i - 2]);
+                            TamaNumList[i] = 5;
+                            TamaNumList[i - 1] = 5;
+                            TamaNumList[i + 1] = 5;
+                            TamaNumList[i - 2] = 5;
+
+                            powerCount = powerCount + 1.0f;
+                        }
+                        else if (i + 2 < 27 && TamaNumList[i] == TamaNumList[i + 2])
+                        {
+                            Destroy(TamaSpawnedList[i]);
+                            Destroy(TamaSpawnedList[i - 1]);
+                            Destroy(TamaSpawnedList[i + 1]);
+                            Destroy(TamaSpawnedList[i + 2]);
+                            TamaNumList[i] = 5;
+                            TamaNumList[i - 1] = 5;
+                            TamaNumList[i + 1] = 5;
+                            TamaNumList[i + 2] = 5;
+
+                            powerCount = powerCount + 1.0f;
+                        }
+                        else
+                        {
+                            //Nothing
+                        }
+                    }
+                    else if (i > 28 && i < 34)
+                    {
+                        if (i - 2 > 28 && TamaNumList[i] == TamaNumList[i - 2])
+                        {
+                            Destroy(TamaSpawnedList[i]);
+                            Destroy(TamaSpawnedList[i - 1]);
+                            Destroy(TamaSpawnedList[i + 1]);
+                            Destroy(TamaSpawnedList[i - 2]);
+                            TamaNumList[i] = 5;
+                            TamaNumList[i - 1] = 5;
+                            TamaNumList[i + 1] = 5;
+                            TamaNumList[i - 2] = 5;
+
+                            powerCount = powerCount + 1.0f;
+                        }
+                        else if (i + 2 < 34 && TamaNumList[i] == TamaNumList[i + 2])
+                        {
+                            Destroy(TamaSpawnedList[i]);
+                            Destroy(TamaSpawnedList[i - 1]);
+                            Destroy(TamaSpawnedList[i + 1]);
+                            Destroy(TamaSpawnedList[i + 2]);
+                            TamaNumList[i] = 5;
+                            TamaNumList[i - 1] = 5;
+                            TamaNumList[i + 1] = 5;
+                            TamaNumList[i + 2] = 5;
+
+                            powerCount = powerCount + 1.0f;
+                        }
+                        else
+                        {
+                            //Nothing
+                        }
+                    }
+                    else if (i > 35 && i < 41)
+                    {
+                        if (i - 2 > 35 && TamaNumList[i] == TamaNumList[i - 2])
+                        {
+                            Destroy(TamaSpawnedList[i]);
+                            Destroy(TamaSpawnedList[i - 1]);
+                            Destroy(TamaSpawnedList[i + 1]);
+                            Destroy(TamaSpawnedList[i - 2]);
+                            TamaNumList[i] = 5;
+                            TamaNumList[i - 1] = 5;
+                            TamaNumList[i + 1] = 5;
+                            TamaNumList[i - 2] = 5;
+
+                            powerCount = powerCount + 1.0f;
+                        }
+                        else if (i + 2 < 41 && TamaNumList[i] == TamaNumList[i + 2])
+                        {
+                            Destroy(TamaSpawnedList[i]);
+                            Destroy(TamaSpawnedList[i - 1]);
+                            Destroy(TamaSpawnedList[i + 1]);
+                            Destroy(TamaSpawnedList[i + 2]);
+                            TamaNumList[i] = 5;
+                            TamaNumList[i - 1] = 5;
+                            TamaNumList[i + 1] = 5;
+                            TamaNumList[i + 2] = 5;
+
+                            powerCount = powerCount + 1.0f;
+                        }
+                        else
+                        {
+                            //Nothing
+                        }
+                    }
+                    else if (i > 42 && i < 48)
+                    {
+                        if (i - 2 > 42 && TamaNumList[i] == TamaNumList[i - 2])
+                        {
+                            Destroy(TamaSpawnedList[i]);
+                            Destroy(TamaSpawnedList[i - 1]);
+                            Destroy(TamaSpawnedList[i + 1]);
+                            Destroy(TamaSpawnedList[i - 2]);
+                            TamaNumList[i] = 5;
+                            TamaNumList[i - 1] = 5;
+                            TamaNumList[i + 1] = 5;
+                            TamaNumList[i - 2] = 5;
+
+                            powerCount = powerCount + 1.0f;
+                        }
+                        else if (i + 2 < 48 && TamaNumList[i] == TamaNumList[i + 2])
+                        {
+                            Destroy(TamaSpawnedList[i]);
+                            Destroy(TamaSpawnedList[i - 1]);
+                            Destroy(TamaSpawnedList[i + 1]);
+                            Destroy(TamaSpawnedList[i + 2]);
+                            TamaNumList[i] = 5;
+                            TamaNumList[i - 1] = 5;
+                            TamaNumList[i + 1] = 5;
+                            TamaNumList[i + 2] = 5;
+
+                            powerCount = powerCount + 1.0f;
+                        }
+                        else
+                        {
+                            //Nothing
+                        }
+                    }
+                    else if (i > 49 && i < 55)
+                    {
+                        if (i - 2 > 49 && TamaNumList[i] == TamaNumList[i - 2])
+                        {
+                            Destroy(TamaSpawnedList[i]);
+                            Destroy(TamaSpawnedList[i - 1]);
+                            Destroy(TamaSpawnedList[i + 1]);
+                            Destroy(TamaSpawnedList[i - 2]);
+                            TamaNumList[i] = 5;
+                            TamaNumList[i - 1] = 5;
+                            TamaNumList[i + 1] = 5;
+                            TamaNumList[i - 2] = 5;
+
+                            powerCount = powerCount + 1.0f;
+                        }
+                        else if (i + 2 < 55 && TamaNumList[i] == TamaNumList[i + 2])
+                        {
+                            Destroy(TamaSpawnedList[i]);
+                            Destroy(TamaSpawnedList[i - 1]);
+                            Destroy(TamaSpawnedList[i + 1]);
+                            Destroy(TamaSpawnedList[i + 2]);
+                            TamaNumList[i] = 5;
+                            TamaNumList[i - 1] = 5;
+                            TamaNumList[i + 1] = 5;
+                            TamaNumList[i + 2] = 5;
+
+                            powerCount = powerCount + 1.0f;
+                        }
+                        else
+                        {
+                            //Nothing
+                        }
+                    }
+                    else if (i > 56 && i < 62)
+                    {
+                        if (i - 2 > 56 && TamaNumList[i] == TamaNumList[i - 2])
+                        {
+                            Destroy(TamaSpawnedList[i]);
+                            Destroy(TamaSpawnedList[i - 1]);
+                            Destroy(TamaSpawnedList[i + 1]);
+                            Destroy(TamaSpawnedList[i - 2]);
+                            TamaNumList[i] = 5;
+                            TamaNumList[i - 1] = 5;
+                            TamaNumList[i + 1] = 5;
+                            TamaNumList[i - 2] = 5;
+
+                            powerCount = powerCount + 1.0f;
+                        }
+                        else if (i + 2 < 62 && TamaNumList[i] == TamaNumList[i + 2])
+                        {
+                            Destroy(TamaSpawnedList[i]);
+                            Destroy(TamaSpawnedList[i - 1]);
+                            Destroy(TamaSpawnedList[i + 1]);
+                            Destroy(TamaSpawnedList[i + 2]);
+                            TamaNumList[i] = 5;
+                            TamaNumList[i - 1] = 5;
+                            TamaNumList[i + 1] = 5;
+                            TamaNumList[i + 2] = 5;
+
+                            powerCount = powerCount + 1.0f;
+                        }
+                        else
+                        {
+                            //Nothing
+                        }
+                    }
+                    else if (i > 63 && i < 69)
+                    {
+                        if (i - 2 > 63 && TamaNumList[i] == TamaNumList[i - 2])
+                        {
+                            Destroy(TamaSpawnedList[i]);
+                            Destroy(TamaSpawnedList[i - 1]);
+                            Destroy(TamaSpawnedList[i + 1]);
+                            Destroy(TamaSpawnedList[i - 2]);
+                            TamaNumList[i] = 5;
+                            TamaNumList[i - 1] = 5;
+                            TamaNumList[i + 1] = 5;
+                            TamaNumList[i - 2] = 5;
+
+                            powerCount = powerCount + 1.0f;
+                        }
+                        else if (i + 2 < 69 && TamaNumList[i] == TamaNumList[i + 2])
+                        {
+                            Destroy(TamaSpawnedList[i]);
+                            Destroy(TamaSpawnedList[i - 1]);
+                            Destroy(TamaSpawnedList[i + 1]);
+                            Destroy(TamaSpawnedList[i + 2]);
+                            TamaNumList[i] = 5;
+                            TamaNumList[i - 1] = 5;
+                            TamaNumList[i + 1] = 5;
+                            TamaNumList[i + 2] = 5;
+
+                            powerCount = powerCount + 1.0f;
+                        }
+                        else
+                        {
+                            //Nothing
+                        }
+                    }
+                    else if (i > 70 && i < 76)
+                    {
+                        if (i - 2 > 70 && TamaNumList[i] == TamaNumList[i - 2])
+                        {
+                            Destroy(TamaSpawnedList[i]);
+                            Destroy(TamaSpawnedList[i - 1]);
+                            Destroy(TamaSpawnedList[i + 1]);
+                            Destroy(TamaSpawnedList[i - 2]);
+                            TamaNumList[i] = 5;
+                            TamaNumList[i - 1] = 5;
+                            TamaNumList[i + 1] = 5;
+                            TamaNumList[i - 2] = 5;
+
+                            powerCount = powerCount + 1.0f;
+                        }
+                        else if (i + 2 < 76 && TamaNumList[i] == TamaNumList[i + 2])
+                        {
+                            Destroy(TamaSpawnedList[i]);
+                            Destroy(TamaSpawnedList[i - 1]);
+                            Destroy(TamaSpawnedList[i + 1]);
+                            Destroy(TamaSpawnedList[i + 2]);
+                            TamaNumList[i] = 5;
+                            TamaNumList[i - 1] = 5;
+                            TamaNumList[i + 1] = 5;
+                            TamaNumList[i + 2] = 5;
+
+                            powerCount = powerCount + 1.0f;
+                        }
+                        else
+                        {
+                            //Nothing
+                        }
+                    }
+                    else if (i > 77 && i < 83)
+                    {
+                        if (i - 2 > 77 && TamaNumList[i] == TamaNumList[i - 2])
+                        {
+                            Destroy(TamaSpawnedList[i]);
+                            Destroy(TamaSpawnedList[i - 1]);
+                            Destroy(TamaSpawnedList[i + 1]);
+                            Destroy(TamaSpawnedList[i - 2]);
+                            TamaNumList[i] = 5;
+                            TamaNumList[i - 1] = 5;
+                            TamaNumList[i + 1] = 5;
+                            TamaNumList[i - 2] = 5;
+
+                            powerCount = powerCount + 1.0f;
+                        }
+                        else if (i + 2 < 83 && TamaNumList[i] == TamaNumList[i + 2])
+                        {
+                            Destroy(TamaSpawnedList[i]);
+                            Destroy(TamaSpawnedList[i - 1]);
+                            Destroy(TamaSpawnedList[i + 1]);
+                            Destroy(TamaSpawnedList[i + 2]);
+                            TamaNumList[i] = 5;
+                            TamaNumList[i - 1] = 5;
+                            TamaNumList[i + 1] = 5;
+                            TamaNumList[i + 2] = 5;
+
+                            powerCount = powerCount + 1.0f;
+                        }
+                        else
+                        {
+                            //Nothing
+                        }
+                    }
                 }
                 else
                 {
