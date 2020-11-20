@@ -195,21 +195,72 @@ public class GameLogic : MonoBehaviour
             }
         }
 
-        //Color Check (3Tama)
-        for(int z = 76; z > 6; z--)
+        ////Color Check (3Tama)
+        //for(int z = 76; z > 6; z--)
+        //{
+        //    if (TamaNumList[z] != 5)
+        //    {
+        //        if(TamaNumList[z] == TamaNumList[z - 7] && TamaNumList[z] == TamaNumList[z + 7])
+        //        {
+        //            Destroy(TamaSpawnedList[z]);
+        //            Destroy(TamaSpawnedList[z - 7]);
+        //            Destroy(TamaSpawnedList[z + 7]);
+        //            TamaNumList[z] = 5;
+        //            TamaNumList[z - 7] = 5;
+        //            TamaNumList[z + 7] = 5;
+
+        //            powerCount = powerCount + 1.0f;
+        //        }
+        //    }
+        //    else
+        //    {
+
+        //    }
+        //}
+
+        //Color Check (4Tama Vartical)
+        for (int z = 76; z > 6; z--)
         {
             if (TamaNumList[z] != 5)
             {
-                if(TamaNumList[z] == TamaNumList[z - 7] && TamaNumList[z] == TamaNumList[z + 7])
+                if (TamaNumList[z] == TamaNumList[z - 7] && TamaNumList[z] == TamaNumList[z + 7])
                 {
-                    Destroy(TamaSpawnedList[z]);
-                    Destroy(TamaSpawnedList[z - 7]);
-                    Destroy(TamaSpawnedList[z + 7]);
-                    TamaNumList[z] = 5;
-                    TamaNumList[z - 7] = 5;
-                    TamaNumList[z + 7] = 5;
+                    if(z - 14 > 0 && z + 14 < 84)
+                    {
+                        if(TamaNumList[z] == TamaNumList[z - 14])
+                        {
+                            Destroy(TamaSpawnedList[z]);
+                            Destroy(TamaSpawnedList[z - 7]);
+                            Destroy(TamaSpawnedList[z + 7]);
+                            Destroy(TamaSpawnedList[z - 14]);
+                            TamaNumList[z] = 5;
+                            TamaNumList[z - 7] = 5;
+                            TamaNumList[z + 7] = 5;
+                            TamaNumList[z - 14] = 5;
 
-                    powerCount = powerCount + 1.0f;
+                            powerCount = powerCount + 1.0f;
+                        }
+                        else if(TamaNumList[z] != TamaNumList[z - 14])
+                        {
+                            if(TamaNumList[z] == TamaNumList[z + 14])
+                            {
+                                Destroy(TamaSpawnedList[z]);
+                                Destroy(TamaSpawnedList[z - 7]);
+                                Destroy(TamaSpawnedList[z + 7]);
+                                Destroy(TamaSpawnedList[z + 14]);
+                                TamaNumList[z] = 5;
+                                TamaNumList[z - 7] = 5;
+                                TamaNumList[z + 7] = 5;
+                                TamaNumList[z + 14] = 5;
+
+                                powerCount = powerCount + 1.0f;
+                            }
+                            else if(TamaNumList[z] != TamaNumList[z + 14])
+                            {
+                                //Nothing
+                            }
+                        }
+                    }
                 }
             }
             else
@@ -217,7 +268,36 @@ public class GameLogic : MonoBehaviour
 
             }
         }
-        yield return new WaitForSeconds(0.4f);
+        yield return new WaitForSeconds(0.2f);
+
+        //Color Check (4Tama Horizontal)
+        for(int i = 82; i > 0; i--)
+        {
+            if(TamaNumList[i] != 5)
+            {
+                if(TamaNumList[i] == TamaNumList[i - 1] && TamaNumList[i] == TamaNumList[i + 1])
+                {
+                    Destroy(TamaSpawnedList[i]);
+                    Destroy(TamaSpawnedList[i - 1]);
+                    Destroy(TamaSpawnedList[i + 1]);
+                    TamaNumList[i] = 5;
+                    TamaNumList[i - 1] = 5;
+                    TamaNumList[i + 1] = 5;
+
+
+                    powerCount = powerCount + 1.0f;
+                }
+                else
+                {
+                    //Nothing
+                }
+            }
+            else
+            {
+                //Nothing
+            }
+        }
+        yield return new WaitForSeconds(0.2f);
 
         StartCoroutine(TamaAutoDown());
     }
