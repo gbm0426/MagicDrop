@@ -4,7 +4,9 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - TamaSelectCol
+  - TamaSelectBox
+  - CanSelect
+  - PlayerArea
   - Drop_0
   - Drop_1
   - Drop_2
@@ -12,7 +14,6 @@ TagManager:
   - Drop_4
   - Drop_5
   - Drop_6
-  - Tama
   layers:
   - Default
   - TransparentFX
